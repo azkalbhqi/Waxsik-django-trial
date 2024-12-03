@@ -1,0 +1,30 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carwash</title>
+    <!-- Add the correct path to your static file -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Cars List</h1>
+    <ul>
+        {% for car in cars %}
+            <li>
+                {{ car.car_model }} (Category: {{ car.get_category_display }})
+                <ul>
+                    {% for service in services %}
+                        <li>
+                            {{ service.service_name }} - 
+                            Price: {{ service.get_price_by_category(car.category) }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

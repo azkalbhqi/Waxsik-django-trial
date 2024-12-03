@@ -1,0 +1,25 @@
+{% if is_admin %}
+    <p>You are an admin!</p>
+{% endif %}
+
+{% if is_owner %}
+    <p>You are an owner!</p>
+{% endif %}
+
+{% if is_inspeksi %}
+    <p>You are in inspeksi!</p>
+{% endif %}
+
+{% if is_produksi %}
+    <p>You are in produksi!</p>
+{% endif %}
+
+{% block content %}
+    <h1>Welcome to the Waxsik Project</h1>
+    <p>Manage your car wash services with ease!</p>
+{% endblock %}
+
+<a href="/cars">Cars List</a>
+<br>
+<a href="/services">Services List</a>
+

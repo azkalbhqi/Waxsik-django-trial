@@ -1,0 +1,10 @@
+<h2>Car Wash Services</h2>
+<a href="{% url 'service_create' %}">Add a new service</a>
+<ul>
+    {% for service in services %}
+        <li>{{ service.service_name }} - ${{ service.price }} - 
+            <a href="{% url 'service_update' service.pk %}">Edit</a> | 
+            <a href="{% url 'service_delete' service.pk %}">Delete</a>
+        </li>
+    {% endfor %}
+</ul>
